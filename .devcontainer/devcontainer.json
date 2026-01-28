@@ -1,0 +1,30 @@
+{
+  "name": "owasp-json-factory",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "containerEnv": {
+    "CLAUDE_CODE_TASK_LIST_ID": "${localEnv:ZERG_FEATURE}",
+    "ZERG_WORKER_ID": "${localEnv:ZERG_WORKER_ID:-0}",
+    "ZERG_BRANCH": "${localEnv:ZERG_BRANCH:-main}"
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postStartCommand": "bash .devcontainer/post-start.sh",
+  "forwardPorts": [],
+  "runArgs": [
+    "--init",
+    "--privileged"
+  ],
+  "remoteUser": "root"
+}

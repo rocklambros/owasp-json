@@ -1,0 +1,15 @@
+project:
+  name: owasp-json
+  description: Parse OWASP Top 10 PDFs into structured JSON schemas
+  language: python
+  version: "3.12"
+  framework: pydantic
+  package_manager: uv
+
+workers:
+  max: 3
+  default: 1
+
+security:
+  level: strict
+  rules_source: TikiTribe/claude-secure-coding-rules
