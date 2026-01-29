@@ -1,40 +1,13 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg-info/
-*.egg
-dist/
-build/
-.eggs/
+# Ignore everything
+*
 
-# Virtual environments
-.venv/
-venv/
-ENV/
+# Except .gitignore itself
+!.gitignore
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
+# Except the directories containing JSON output
+!agentic-top-10/
+!llm-top-10/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment
-.env
-.env.local
-credentials.env
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.mypy_cache/
-
-# Distribution
-*.tar.gz
-*.whl
+# And the JSON files within them
+!agentic-top-10/*.json
+!llm-top-10/*.json
